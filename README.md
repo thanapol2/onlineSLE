@@ -9,11 +9,14 @@
 
 
 ## Dependencies
-- [numpy](http://www.numpy.org/) >=1.23.5
+- [numpy](http://www.numpy.org/) >=1.26.4
+- [scipy](https://scipy.org/) >= 1.12.0
+- [matplotlib](https://matplotlib.org/) >= 3.8.2
+- [periodicity-detection](https://periodicity-detection.readthedocs.io/en/latest/) >= 0.1.1    ** For existing methods
 
 
 ## Citing
-- If you plan to use or apply our source code, please cite our paper published.
+- If you plan to use or apply our source code, please cite our published paper.
 
 ## Link
 - [Our laboraory at Shizuoka University](http://lab.inf.shizuoka.ac.jp/yamamoto/)
