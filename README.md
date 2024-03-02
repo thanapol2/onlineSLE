@@ -17,6 +17,18 @@
 
 ## Citing
 - If you plan to use or apply our source code, please cite our published paper.
+```
+@article{10.11517/jsaikbs.131.0_21,
+  title={Enhancing Seasonal Length Estimation for Time-Series StreamingData using Sliding Discrete Fourier Transform},
+  author={Phungtua-eng Thanapol and 山本 泰生},
+  journal={人工知能学会研究会資料 知識ベースシステム研究会},
+  volume={131},
+  number={ },
+  pages={21-26},
+  year={2024},
+  doi={10.11517/jsaikbs.131.0_21}
+}
+```
 
 ## Link
 - [Our laboraory at Shizuoka University](http://lab.inf.shizuoka.ac.jp/yamamoto/)
