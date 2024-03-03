@@ -29,7 +29,7 @@ def peridogram(sliding_window_size: int, fft_ts : np.ndarray[np.complex128])\
     return xfreq, periodogram_den[:int(sliding_window_size / 2)].real
 
 
-def get_period_hints(periodogram_density: np.ndarray[np.complex128], percentile_threshold: float = 99.):
+def get_period_hints(periodogram_density: np.ndarray[np.complex128]):
     """
     Identify significant periods from a periodogram density.
 
@@ -37,9 +37,7 @@ def get_period_hints(periodogram_density: np.ndarray[np.complex128], percentile_
     ----------
     periodogram_density : np.ndarray[np.complex128]
         Periodogram density, typically obtained from Fourier analysis.
-    percentile_threshold : float, optional
-        Percentile threshold for identifying significant peaks (default is 99%).
-
+   
     Returns
     -------
     tuple
@@ -85,23 +83,6 @@ def update_sDFT(fft_X: np.ndarray[np.complex128], old_x: float, new_x: float) ->
     new_fft_X = (fft_X - old_x + new_x) * twiddle
 
     return new_fft_X
-
-def onlineSLE(sliding_window_size, x):
-    results = []
-    # offline mode
-    W = x[:sliding_window_size]
-    start_fft = fft(W)
-    xfreq, periodogram_den = peridogram(sliding_window_size, start_fft)
-    peak_index = get_period_hints(periodogram_den)
-    if peak_index > 1:
-        frequency = xfreq[peak_index]
-        sdft_result = round(1 / frequency)
-    else:
-        sdft_result = 1
-    results.append({'idx_win': sliding_window_size,
-                    'answer': answer_window[window_size - 1],
-                    'result': sdft_result})
-    print('a')
 
 
 def result_aggregation(dataset_name, algo_name, input_results):
