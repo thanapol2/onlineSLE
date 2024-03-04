@@ -54,7 +54,7 @@ def get_period_hints(periodogram_density: np.ndarray[np.complex128]):
 
 def update_sDFT(fft_X: np.ndarray[np.complex128], old_x: float, new_x: float) -> np.ndarray[np.complex128]:
     """
-    Update a signal's Discrete Fourier Transform (sDFT) using sliding DFT.
+    Update a signal's Discrete Fourier Transform using sliding DFT (sDFT).
 
     Parameters
     ----------
