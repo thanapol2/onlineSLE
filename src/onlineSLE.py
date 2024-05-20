@@ -37,7 +37,7 @@ def get_period_hints(periodogram_density: np.ndarray[np.complex128]):
     ----------
     periodogram_density : np.ndarray[np.complex128]
         Periodogram density, typically obtained from Fourier analysis.
-   
+
     Returns
     -------
     tuple
@@ -52,7 +52,7 @@ def get_period_hints(periodogram_density: np.ndarray[np.complex128]):
     return index_peak
 
 
-def update_sDFT(fft_X: np.ndarray[np.complex128], old_x: float, new_x: float) -> np.ndarray[np.complex128]:
+def update_sDFT(fft_X: np.ndarray[np.complex128], old_x: float, new_x: float, twiddle) -> np.ndarray[np.complex128]:
     """
     Update a signal's Discrete Fourier Transform using sliding DFT (sDFT).
 
@@ -64,6 +64,8 @@ def update_sDFT(fft_X: np.ndarray[np.complex128], old_x: float, new_x: float) ->
         Value to be replaced in the original sDFT.
     new_x : float
         New value to replace the old value.
+    twiddle : np.ndarray[np.complex128]
+        Twiddle factor (e^{-j2\pi k/N})
 
     Returns
     -------
@@ -77,9 +79,6 @@ def update_sDFT(fft_X: np.ndarray[np.complex128], old_x: float, new_x: float) ->
     [2] E. Jacobsen and R. Lyons, "An update to the sliding DFT," in IEEE Signal Processing Magazine,
        vol. 21, no. 1, pp. 110-111, Jan. 2004, doi: 10.1109/MSP.2004.1516381.
     """
-    N = len(fft_X)
-    k = np.arange(N)
-    twiddle = np.exp(2j * np.pi * k / N)
     new_fft_X = (fft_X - old_x + new_x) * twiddle
 
     return new_fft_X
@@ -116,7 +115,7 @@ def result_aggregation(dataset_name, algo_name, input_results):
             'dataset_name': dataset_name,
             'algorithms': algo_name,
             'error_bound': error_bound,
-            'accuracy_ratio': accuracy_ratio
+            'accuracy_ratio': round(accuracy_ratio, 3)
         })
 
     # Return the compiled output results.

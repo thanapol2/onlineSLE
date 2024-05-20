@@ -2,6 +2,7 @@ import json
 import numpy as np
 import math
 
+
 def square_wave(length, period, amplitude):
     one_period = np.arange(0, period, 1)
     one_period = amplitude * np.sign(np.sin(2 * np.pi * (1 / period) * one_period))
@@ -32,14 +33,15 @@ def sinewave(length: int, period: int, amplitude: int):
 # 2. ts denotes original time series data
 # 3. seasonality denotes seasonality (S)
 # 4. residual denotes residual (R)
-def generate_syn1(filename: str = "syn1.json", is_export = False):
+def generate_syn1(filename: str = "syn1.json", residual_rate=0.1, is_export=False):
     # dataset oneShotSTL
     np.random.seed(0)
     M_P = 100
     TS_length = 5200
 
     seasonality = square_wave(TS_length, 100, 1)
-    residual = 0.03 * np.random.randn(TS_length)
+    sigma = np.std(seasonality)
+    residual = residual_rate * sigma * np.random.randn(TS_length)
     TS = seasonality + residual
 
     ground_truth = np.repeat(M_P, TS_length)
@@ -53,7 +55,8 @@ def generate_syn1(filename: str = "syn1.json", is_export = False):
             json.dump(data, outfile)
     return data
 
-def generate_syn2(filename: str = "syn3.1.json", is_export = False):
+
+def generate_syn2(filename: str = "syn2.json", residual_rate=0.1, is_export=False):
     np.random.seed(0)
     TS_length = 5000
 
@@ -68,10 +71,11 @@ def generate_syn2(filename: str = "syn3.1.json", is_export = False):
                                   third_pattern))
 
     ground_truth = np.concatenate((np.repeat(M_1, 1800),
-                                    np.repeat(M_2, 1800),
-                                    np.repeat(M_1, 1400)))
+                                   np.repeat(M_2, 1800),
+                                   np.repeat(M_1, 1400)))
 
-    residual = 0.03 * np.random.randn(TS_length)
+    sigma = np.std(seasonality)
+    residual = residual_rate * sigma * np.random.randn(TS_length)
     TS = seasonality + residual
 
     data = {'ground_truth': ground_truth.tolist(),
@@ -84,4 +88,3 @@ def generate_syn2(filename: str = "syn3.1.json", is_export = False):
             json.dump(data, outfile)
 
     return data
-
