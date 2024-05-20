@@ -1,0 +1,5 @@
+matplotlib>=3.8.3
+numpy>=1.26.4
+periodicity_detection>=0.1.1
+rpy2>=3.5.16
+scipy>=1.13.0
