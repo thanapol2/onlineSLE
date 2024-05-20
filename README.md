@@ -1,6 +1,6 @@
 ![alt text](https://github.com/thanapol2/Mean_EBinning/blob/082cd9447659d9d140acc38d5d4c11db9187d06c/Documents/shizuoka%20bannar.png)
 
-# Online Season Length Estimation algorithm (OnlineSLE)
+# Online Season Length Estimation Algorithm (OnlineSLE)
 
 
 - OnlineSLE was implemented using Python 3.9.2.
