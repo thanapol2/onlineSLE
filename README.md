@@ -1,8 +1,8 @@
 ![alt text](https://github.com/thanapol2/Mean_EBinning/blob/082cd9447659d9d140acc38d5d4c11db9187d06c/Documents/shizuoka%20bannar.png)
 
-# Online Season Length Estimation algorithm (OnlineSLE)
+# Online Season Length Estimation Algorithm (OnlineSLE)
 
-
+- OnlineSLE is a fast season length estimation method using Sliding Discrete Fourier Transform (SDFT).
 - OnlineSLE was implemented using Python 3.9.2.
 
 >T. Phungtua-eng, Y. Yamamoto, 2024. A Fast Season Length Estimation Using Sliding Discrete Fourier Transform for Time Series Streaming Data. 16th International Congress on Advanced Applied Informatics (IIAI AAI 2024) **(To appear)**
