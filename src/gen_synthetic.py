@@ -27,9 +27,9 @@ def sinewave(length: int, period: int, amplitude: int):
     return seasonal[:length]
 
 
-# All datasets are export into JSON files
+# All datasets are exported into JSON files
 # Data dic :
-# 1. ground_truth denotes ground truth of seasonal length of each timestamp
+# 1. ground_truth denotes the ground truth of the season length of each timestamp
 # 2. ts denotes original time series data
 # 3. seasonality denotes seasonality (S)
 # 4. residual denotes residual (R)
