@@ -5,7 +5,7 @@
 - OnlineSLE is a fast season length estimation method using Sliding Discrete Fourier Transform (SDFT).
 - OnlineSLE was implemented using Python 3.9.2.
 
->T. Phungtua-eng, Y. Yamamoto, 2024. A Fast Season Length Estimation Using Sliding Discrete Fourier Transform for Time Series Streaming Data. 16th International Congress on Advanced Applied Informatics (IIAI AAI 2024) **(To appear)**
+>T. Phungtua-eng and Y. Yamamoto, "A Fast Season Length Estimation Using Sliding Discrete Fourier Transform for Time Series Streaming Data," 2024 16th IIAI International Congress on Advanced Applied Informatics (IIAI-AAI), Takamatsu, Japan, 2024, pp. 482-487, doi: 10.1109/IIAI-AAI63651.2024.00093.
 
 - If you have any more questions or need further suggestions, don't hesitate to email me.
 
@@ -41,13 +41,17 @@
 ## Citing
 - If you plan to use or apply our source code, please cite our published paper. Note that the DOI and BibTeX will be updated after our publication appears online.
 ```
-@inproceedings{OnlineSLE,
-	author = {Phungtua-Eng, T. and Yamamoto, Y.},
-	booktitle = {Proceedings of the 16th International Congress on Advanced Applied Informatics},
-	note = {(To appear)},
-	title = {A Fast Season Length Estimation using Sliding Discrete Fourier Transform for Time Series Streaming Data},
-	year = {2024}
-}
+@INPROCEEDINGS{10707869,
+  author={Phungtua-eng, Thanapol and Yamamoto, Yoshitaka},
+  booktitle={2024 16th IIAI International Congress on Advanced Applied Informatics (IIAI-AAI)}, 
+  title={A Fast Season Length Estimation Using Sliding Discrete Fourier Transform for Time Series Streaming Data}, 
+  year={2024},
+  volume={},
+  number={},
+  pages={482-487},
+  keywords={Accuracy;Fast Fourier transforms;Time series analysis;Discrete Fourier transforms;Estimation;Robustness;Real-time systems;Computational efficiency;Low latency communication;Informatics;Time series data mining;Sliding discrete Fourier transform;Periodogram;Season length estimation},
+  doi={10.1109/IIAI-AAI63651.2024.00093}}
+
 ```
 
 ## Link
